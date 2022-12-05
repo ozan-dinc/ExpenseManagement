@@ -1,0 +1,39 @@
+﻿@model User
+@{
+    Layout = "_LayoutUser";
+    ViewData["Title"] = "Login";
+}
+
+<form method="post" asp-action="Login">
+    <div class="container align-content-center">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <p><b>@ViewBag.LoginStatus</b></p>
+        <br />
+
+        <div class=row>
+            <div class="col-4">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control"  />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class=row>
+            <div class="col-4">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" type="password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+
+        <div class="w-12 btn-group" role="group">
+            @*<input type="submit" class="btn btn-primary mx-1" value="Login" />*@
+            <a asp-action="Index" asp-controller="Home" class="btn btn-success mx-1">Login</a>
+            <a asp-action="Registration" asp-controller="User" class="btn btn-success mx-1">Register</a>
+        </div>
+
+
+    </div>
+</form>
